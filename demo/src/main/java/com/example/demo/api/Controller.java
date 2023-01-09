@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
+import java.util.function.Supplier;
 
-@RequestMapping("/test")
+@RequestMapping("/")
 @RestController
 public class Controller {
 
@@ -33,12 +35,13 @@ public class Controller {
 
     @GetMapping
     public List<Person> getPerson(){
-
+        //return new Person(UUID.randomUUID(),"Bill");
         return personService.getPerson();
     }
 
     @GetMapping(path = "/{id}")
-    public void getPersonById(@PathVariable UUID id){
-
+    public Person getPersonById(@PathVariable UUID id){
+        //return personService.getPersonById(id).orElse(new Person());
+        return null;
     }
 }

@@ -1,0 +1,7 @@
+app:
+  datasource:
+    # protocol"//ip address:port number/db name
+    jdbcurl: jdbc:postgresql://localhost:49154/demodb
+    username: postgres
+    password: postgrespw
+    pool-size: 30
